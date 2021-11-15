@@ -1,9 +1,12 @@
 import express from 'express'
-import { createtPosts, getPosts } from '../controller/posts.js'
+import { createPosts, deletePost, getPosts, updatePost, likePost } from '../controller/posts.js'
 
 const router = express.Router()
 
 router.get('/', getPosts)
-router.post('/', createtPosts)
+router.post('/', createPosts)
+router.patch('/:id', updatePost)
+router.delete('/:id', deletePost)
+router.patch('/:id/likePost', likePost)
 
 export default router
